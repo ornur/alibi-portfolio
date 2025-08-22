@@ -23,9 +23,9 @@ export function LoadingAnimation() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <div className="relative flex justify-center items-center max-w-full max-h-full">
+          <div className="relative flex max-h-full max-w-full items-center justify-center">
             <motion.p
-              className="text-[400px] h-164 absolute font-latin text-transparent"
+              className="absolute h-164 font-latin text-[400px] text-transparent"
               style={{
                 WebkitTextStroke: "2px gray",
               }}
@@ -39,7 +39,7 @@ export function LoadingAnimation() {
               a
             </motion.p>
 
-            <p className="text-5xl -ml-4 font-medium font-latin tracking-wider z-10 text-white">
+            <p className="-ml-4 font-latin text-5xl font-medium tracking-wider text-white">
               alibi
             </p>
           </div>
