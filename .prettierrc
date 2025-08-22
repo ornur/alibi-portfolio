@@ -1,0 +1,13 @@
+{
+  "tailwindStylesheet": "./src/app/globals.css",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindAttributes": ["class", "className", "ngClass"],
+  "tailwindFunctions": ["clsx", "cn", "cva"],
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "quoteProps": "as-needed",
+  "trailingComma": "es5"
+}
