@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
-import "./globals.css";
 import { LoadingAnimation } from "@/components/loading-animation";
+import "./globals.css";
+import { Provider } from "./provider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -26,12 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body
         className={`${poppins.variable} ${montserrat.variable} antialiased`}
       >
         <LoadingAnimation />
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
