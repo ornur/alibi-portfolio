@@ -38,7 +38,7 @@ export function NavBar() {
 
   return (
     <motion.nav
-      className="mt-4 rounded-4xl p-2"
+      className="fixed mt-4 w-full max-w-5xl rounded-4xl bg-black p-2 shadow-xl shadow-loading-orange/10"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
