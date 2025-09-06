@@ -13,6 +13,25 @@ const menuItems = [
   { name: "Контакты", href: "#contacts" },
 ];
 
+const handleSmoothScroll = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  e.preventDefault();
+  const targetId = href.replace("#", "");
+  const element = document.getElementById(targetId);
+  if (element) {
+    const headerOffset = 80; // Height of fixed header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
+
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   return (
@@ -47,6 +66,7 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
+                        onClick={(e) => handleSmoothScroll(e, item.href)}
                         className="block font-semibold text-muted-foreground duration-150 hover:text-accent"
                       >
                         <span className="font-cyrillic">{item.name}</span>
@@ -64,6 +84,7 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
+                        onClick={(e) => handleSmoothScroll(e, item.href)}
                         className="block text-muted-foreground duration-150 hover:text-accent"
                       >
                         <span className="font-cyrillic">{item.name}</span>
@@ -74,12 +95,18 @@ export const HeroHeader = () => {
               </div>
               <div className="flex w-full flex-col space-y-3 font-cyrillic sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild variant="outline" size="sm">
-                  <Link href="#contacts">
+                  <Link
+                    href="#contacts"
+                    onClick={(e) => handleSmoothScroll(e, "#contacts")}
+                  >
                     <span>Связаться</span>
                   </Link>
                 </Button>
                 <Button asChild size="sm">
-                  <Link href="#education">
+                  <Link
+                    href="#education"
+                    onClick={(e) => handleSmoothScroll(e, "#education")}
+                  >
                     <span>Обучение</span>
                   </Link>
                 </Button>

@@ -50,9 +50,9 @@
 :root {
   --radius: 0.625rem;
   --loading-gray: #363636;
-  --loading-orange: #FF7E21;
-  
-  --background: oklch(0.10 0 0);
+  --loading-orange: #ff7e21;
+
+  --background: oklch(0.12 0 0);
   --foreground: oklch(1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -68,7 +68,7 @@
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --input: oklch(0.556 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -123,7 +123,20 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background font-sans text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure smooth scrolling works in all browsers */
+  @media (prefers-reduced-motion: no-preference) {
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
   }
 }

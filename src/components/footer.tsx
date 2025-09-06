@@ -32,7 +32,7 @@ export default function FooterSection() {
           <Logo />
         </Link>
 
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-8 flex flex-wrap justify-center font-cyrillic font-semibold gap-6 text-sm">
           {links.map((link, index) => (
             <Link
               key={index}

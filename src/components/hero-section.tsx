@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,25 @@ import Image from "next/image";
 import { HeroHeader } from "@/components/header";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { ProgressiveBlur } from "@/components/motion-primitives/progressive-blur";
+
+const handleSmoothScroll = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  e.preventDefault();
+  const targetId = href.replace("#", "");
+  const element = document.getElementById(targetId);
+  if (element) {
+    const headerOffset = 80; // Height of fixed header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
 
 export default function HeroSection() {
   return (
@@ -25,7 +45,10 @@ export default function HeroSection() {
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                   <Button asChild size="lg" className="px-5 text-base">
-                    <Link href="#projects">
+                    <Link
+                      href="#projects"
+                      onClick={(e) => handleSmoothScroll(e, "#projects")}
+                    >
                       <span className="font-cyrillic text-nowrap">
                         Мои проекты
                       </span>
@@ -38,7 +61,10 @@ export default function HeroSection() {
                     variant="ghost"
                     className="px-5 text-base"
                   >
-                    <Link href="#contacts">
+                    <Link
+                      href="#contacts"
+                      onClick={(e) => handleSmoothScroll(e, "#contacts")}
+                    >
                       <span className="font-cyrillic text-nowrap">
                         Связаться
                       </span>
@@ -60,7 +86,7 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-nowrap font-cyrillic text-sm">
+                <p className="text-end font-cyrillic text-sm text-nowrap">
                   Клиенты и партнёры
                 </p>
               </div>
