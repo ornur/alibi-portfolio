@@ -32,7 +32,7 @@ export default function FooterSection() {
           <Logo />
         </Link>
 
-        <div className="my-8 flex flex-wrap justify-center font-cyrillic font-semibold gap-6 text-sm">
+        <div className="my-8 flex flex-wrap justify-center gap-6 font-cyrillic text-sm font-semibold">
           {links.map((link, index) => (
             <Link
               key={index}
@@ -85,7 +85,7 @@ export default function FooterSection() {
             </svg>
           </Link>
           <Link
-            href="https://www.youtube.com/@AlibiAllisher"
+            href="https://www.youtube.com/@alibi.alisherr"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
