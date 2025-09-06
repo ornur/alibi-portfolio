@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
+import { TextShimmer } from "./motion-primitives/text-shimmer";
 
 export function LoadingAnimation() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,9 +30,9 @@ export function LoadingAnimation() {
               style={{
                 WebkitTextStroke: "2px gray",
               }}
-              animate={{ opacity: [0, 0.7, 0] }}
+              animate={{ opacity: [0.1, 0.6, 0.1] }}
               transition={{
-                duration: 2.5,
+                duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -39,9 +40,12 @@ export function LoadingAnimation() {
               a
             </motion.p>
 
-            <p className="-ml-4 font-latin text-5xl font-medium tracking-wider text-white">
+            <TextShimmer
+              className="-ml-4 font-latin text-5xl font-medium tracking-wider [--base-color:var(--color-white)]"
+              duration={2}
+            >
               alibi
-            </p>
+            </TextShimmer>
           </div>
         </motion.div>
       )}
