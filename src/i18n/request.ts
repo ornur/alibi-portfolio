@@ -1,7 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
 import { cookies } from "next/headers";
-
-const locales = ["kk", "ru"] as const;
+import { locales } from "./global";
 
 export default getRequestConfig(async () => {
   const store = await cookies();

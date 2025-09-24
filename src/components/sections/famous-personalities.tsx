@@ -3,6 +3,7 @@
 import { InView } from "@/components/ui/in-view";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { famousPersonalities } from "@/constants";
+import Image from "next/image";
 
 export function FamousPersonalities() {
   return (
@@ -50,10 +51,13 @@ export function FamousPersonalities() {
                     scrollbarGutter: "auto",
                   }}
                 >
-                    <img
+                    <Image
                       src={personality.image}
                       alt={personality.name}
                       className="aspect-square object-cover transition-transform duration-300 group-hover:scale-110"
+                      width={272}
+                      height={272}
+                      sizes="100vw"
                     />
                   <div className="p-4 text-center transition-transform duration-300 group-hover:scale-105">
                     <h3 className="font-cyrillic text-lg font-semibold text-foreground">

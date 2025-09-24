@@ -111,7 +111,7 @@ export const famousPersonalities = [
     nameEn: "Rustem Zhanyamanov",
     profession: "Актёр",
     image:
-      "rustem.webp",
+      "/rustem.webp",
   },
   {
     id: 4,
@@ -135,6 +135,6 @@ export const famousPersonalities = [
     nameEn: "Aqarys",
     profession: "Публичная личность",
     image:
-      "aqarys.jpg",
+      "/aqarys.jpg",
   },
 ];
