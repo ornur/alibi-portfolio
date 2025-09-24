@@ -1,3 +1,4 @@
+"use client";
 import { InView } from "@/components/ui/in-view";
 import { keyProjects } from "@/constants";
 import {
@@ -12,20 +13,24 @@ import {
   MorphingDialogContainer,
 } from "@/components/motion-primitives/morphing-dialog";
 import { PlusIcon, CalendarIcon, TargetIcon } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function Projects() {
+  const isMobile = useIsMobile();
   return (
     <section
       id="projects"
       className="bg-gradient-to-b from-background to-muted/10 py-32"
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
         <InView
           variants={{
-            hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
+            hidden: { opacity: 0, y: isMobile ? 0 : 40, filter: "blur(4px)" },
             visible: { opacity: 1, y: 0, filter: "blur(0px)" },
           }}
-          viewOptions={{ margin: "0px 0px -150px 0px" }}
+          viewOptions={{
+            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -150px 0px",
+          }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <div className="mb-16 text-center">
@@ -44,10 +49,16 @@ export function Projects() {
             <InView
               key={project.id}
               variants={{
-                hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+                hidden: {
+                  opacity: 0,
+                  y: isMobile ? 0 : 30,
+                  filter: "blur(4px)",
+                },
                 visible: { opacity: 1, y: 0, filter: "blur(0px)" },
               }}
-              viewOptions={{ margin: "0px 0px -100px 0px" }}
+              viewOptions={{
+                margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+              }}
               transition={{
                 duration: 0.6,
                 ease: "easeInOut",

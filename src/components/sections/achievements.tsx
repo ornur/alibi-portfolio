@@ -3,7 +3,7 @@ import { achievements } from "@/constants";
 
 export function Achievements() {
   return (
-    <div id="results" className="mx-auto max-w-6xl pb-32 pt-24">
+    <div id="results" className="mx-auto max-w-6xl pb-32 px-4">
       <InView
         variants={{
           hidden: { opacity: 0, y: 40, filter: "blur(4px)" },

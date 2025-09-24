@@ -1,21 +1,26 @@
+"use client";
 import Image from "next/image";
 import { InView } from "../ui/in-view";
 import { AnimatedStats } from "../animated-stats";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function AboutMe() {
+  const isMobile = useIsMobile();
   return (
     <section
       id="about"
-      className="bg-gradient-to-b from-background to-muted/20 py-32"
+      className="py-32"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8">
         {/* Header */}
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+            hidden: { opacity: 0, y: isMobile ? 0 : 30, filter: "blur(4px)" },
             visible: { opacity: 1, y: 0, filter: "blur(0px)" },
           }}
-          viewOptions={{ margin: "0px 0px -200px 0px" }}
+          viewOptions={{
+            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+          }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <div className="mb-20 text-center">
@@ -33,10 +38,16 @@ export function AboutMe() {
           {/* Image */}
           <InView
             variants={{
-              hidden: { opacity: 0, x: -50, filter: "blur(4px)" },
+              hidden: {
+                opacity: 0,
+                x: isMobile ? 0 : -50,
+                filter: "blur(4px)",
+              },
               visible: { opacity: 1, x: 0, filter: "blur(0px)" },
             }}
-            viewOptions={{ margin: "0px 0px -100px 0px" }}
+            viewOptions={{
+              margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+            }}
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
           >
             <div className="relative">
@@ -53,26 +64,32 @@ export function AboutMe() {
           </InView>
 
           {/* Content */}
-          <div className="space-y-12">
+          <div className="-mt-3 space-y-6">
             {/* Introduction */}
             <InView
               variants={{
-                hidden: { opacity: 0, x: 50, filter: "blur(4px)" },
+                hidden: {
+                  opacity: 0,
+                  x: isMobile ? 0 : 50,
+                  filter: "blur(4px)",
+                },
                 visible: { opacity: 1, x: 0, filter: "blur(0px)" },
               }}
-              viewOptions={{ margin: "0px 0px -100px 0px" }}
+              viewOptions={{
+                margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+              }}
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
             >
-              <div className="space-y-6">
+              <div className="space-y-3">
                 <h3 className="font-cyrillic text-3xl font-bold">
                   Алиби Алишер
                 </h3>
-                <p className="font-cyrillic text-lg leading-relaxed text-muted-foreground">
+                <p className="font-cyrillic text-base leading-relaxed text-muted-foreground">
                   Я занимаюсь видеопроизводством более 4 лет, из которых
                   последние 2 года — в роли режиссёра, продюсера и
                   контент-продюсера брендов.
                 </p>
-                <p className="font-cyrillic text-lg leading-relaxed text-muted-foreground">
+                <p className="font-cyrillic text-base leading-relaxed text-muted-foreground">
                   Моя специализация — создание киношного видеоконтента: от
                   разработки концепции и написания сценариев до организации
                   съёмочного процесса и аналитики готового продукта. Я помогаю

@@ -68,7 +68,7 @@ export function AnimatedStats() {
       viewOptions={{ margin: "0px 0px -100px 0px" }}
       transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
     >
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 ">
         {stats.map((stat, index) => (
           <AnimatedStat
             key={index}

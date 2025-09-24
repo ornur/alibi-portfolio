@@ -4,17 +4,21 @@ import { InView } from "@/components/ui/in-view";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { famousPersonalities } from "@/constants";
 import Image from "next/image";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function FamousPersonalities() {
+  const isMobile = useIsMobile();
   return (
     <section className="relative overflow-hidden bg-background py-24">
-      <div className="w-full mx-auto px-4">
+      <div className="mx-auto w-full px-4">
         <InView
           variants={{
-            hidden: { opacity: 0, y: 50 },
+            hidden: { opacity: 0, y: isMobile ? 0 : 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          viewOptions={{ margin: "0px 0px -100px 0px" }}
+          viewOptions={{
+            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+          }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
           <div className="mb-16 text-center">
@@ -27,13 +31,14 @@ export function FamousPersonalities() {
             </p>
           </div>
         </InView>
-
         <InView
           variants={{
             hidden: { opacity: 0, scale: 0.9 },
             visible: { opacity: 1, scale: 1 },
           }}
-          viewOptions={{ margin: "0px 0px -100px 0px" }}
+          viewOptions={{
+            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+          }}
           transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
         >
           <div className="relative">
@@ -46,19 +51,19 @@ export function FamousPersonalities() {
               {famousPersonalities.map((personality) => (
                 <div
                   key={personality.id}
-                  className="group flex flex-col w-55 lg:w-68 overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-2xl"
+                  className="group flex w-55 flex-col overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-2xl lg:w-68"
                   style={{
                     scrollbarGutter: "auto",
                   }}
                 >
-                    <Image
-                      src={personality.image}
-                      alt={personality.name}
-                      className="aspect-square object-cover transition-transform duration-300 group-hover:scale-110"
-                      width={272}
-                      height={272}
-                      sizes="100vw"
-                    />
+                  <Image
+                    src={personality.image}
+                    alt={personality.name}
+                    className="aspect-square object-cover transition-transform duration-300 group-hover:scale-110"
+                    width={272}
+                    height={272}
+                    sizes="100vw"
+                  />
                   <div className="p-4 text-center transition-transform duration-300 group-hover:scale-105">
                     <h3 className="font-cyrillic text-lg font-semibold text-foreground">
                       {personality.name}
@@ -82,7 +87,9 @@ export function FamousPersonalities() {
             hidden: { opacity: 0, y: 30 },
             visible: { opacity: 1, y: 0 },
           }}
-          viewOptions={{ margin: "0px 0px -100px 0px" }}
+          viewOptions={{
+            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -100px 0px",
+          }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
         >
           <div className="mt-16 text-center">
