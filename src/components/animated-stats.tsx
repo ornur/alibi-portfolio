@@ -22,10 +22,16 @@ function AnimatedStat({
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "0px 0px -100px 0px" });
 
+  // Reset and animate when coming into view
   if (isInView && animatedValue === 0) {
     setTimeout(() => {
       setAnimatedValue(value);
     }, delay);
+  }
+
+  // Reset when going out of view
+  if (!isInView && animatedValue !== 0) {
+    setAnimatedValue(0);
   }
 
   return (
@@ -33,14 +39,14 @@ function AnimatedStat({
       <Tilt
         rotationFactor={16}
         isRevese
-        className="rounded-2xl border bg-card p-4 text-center shadow-sm transition-colors duration-300 hover:bg-amber-50 hover:text-black"
+        className="flex h-full flex-col justify-between rounded-2xl border bg-card p-4 text-center shadow-sm transition-colors duration-300 hover:bg-amber-50 hover:text-black"
       >
         <div className="flex items-center justify-center font-cyrillic text-3xl font-bold">
           <AnimatedNumber
             className="inline-flex items-center"
             springOptions={{
               bounce: 0,
-              duration: 2000,
+              duration: 3000,
             }}
             value={animatedValue}
           />
