@@ -87,3 +87,54 @@ export const achievements = [
   "Работа с международными компаниями",
   "Комплексный подход: от идеи до результата",
 ];
+
+export const famousPersonalities = [
+  {
+    id: 1,
+    name: "Аян Өтепберген",
+    nameEn: "Ayan Otepbergen",
+    profession: "Актёр, режиссёр",
+    image:
+      "/ayan.jpg",
+  },
+  {
+    id: 2,
+    name: "Асылхан Төлепов",
+    nameEn: "Asylkhan Tolepov",
+    profession: "Актёр",
+    image:
+      "/asylkhan.jpg",
+  },
+  {
+    id: 3,
+    name: "Рустем Жаныаманов",
+    nameEn: "Rustem Zhanyamanov",
+    profession: "Актёр",
+    image:
+      "rustem.webp",
+  },
+  {
+    id: 4,
+    name: "Мансур Құдайбергенов",
+    nameEn: "Mansur Kudaibergenov",
+    profession: "Актёр",
+    image:
+      "/mansur.jpg",
+  },
+  {
+    id: 5,
+    name: "Абуали Өмірәли",
+    nameEn: "Abuali Omirali",
+    profession: "Актёр, продюсер",
+    image:
+      "/abuali.jpg",
+  },
+  {
+    id: 6,
+    name: "Aqarys",
+    nameEn: "Aqarys",
+    profession: "Публичная личность",
+    image:
+      "aqarys.jpg",
+  },
+];

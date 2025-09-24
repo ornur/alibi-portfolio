@@ -182,7 +182,7 @@
       scroll-behavior: smooth;
     }
   }
-  
+
   /* Hide scrollbars on mobile, show on desktop */
   @media (max-width: 767px) {
     /* Mobile: Hide scrollbars completely */
@@ -228,5 +228,14 @@
     *::-webkit-scrollbar-corner {
       background: transparent;
     }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
