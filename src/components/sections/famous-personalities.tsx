@@ -45,7 +45,7 @@ export function FamousPersonalities() {
               {famousPersonalities.map((personality) => (
                 <div
                   key={personality.id}
-                  className="group flex flex-col overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-2xl"
+                  className="group flex flex-col w-55 lg:w-68 overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-2xl"
                   style={{
                     scrollbarGutter: "auto",
                   }}
@@ -53,7 +53,7 @@ export function FamousPersonalities() {
                     <img
                       src={personality.image}
                       alt={personality.name}
-                      className="aspect-square w-68 object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="aspect-square object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   <div className="p-4 text-center transition-transform duration-300 group-hover:scale-105">
                     <h3 className="font-cyrillic text-lg font-semibold text-foreground">
