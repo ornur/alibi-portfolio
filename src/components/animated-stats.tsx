@@ -4,7 +4,13 @@ import { Tilt } from "@/components/ui/tilt";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { useInView } from "motion/react";
 import { useRef, useState } from "react";
-import { stats } from "@/constants";
+import { useTranslations } from "next-intl";
+
+interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+}
 
 // Individual animated stat components
 function AnimatedStat({
@@ -59,6 +65,14 @@ function AnimatedStat({
 }
 
 export function AnimatedStats() {
+  const t = useTranslations("stats");
+  const stats = [
+    { value: 4, suffix: "+", label: t("experience") },
+    { value: 50, suffix: "+", label: t("projects") },
+    { value: 12, suffix: "М+", label: t("coverage") },
+    { value: 15, suffix: "К+", label: t("newSubscribers") },
+  ];
+
   return (
     <InView
       variants={{
@@ -68,8 +82,8 @@ export function AnimatedStats() {
       viewOptions={{ margin: "0px 0px -100px 0px" }}
       transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
     >
-      <div className="grid grid-cols-2 gap-3 ">
-        {stats.map((stat, index) => (
+      <div className="grid grid-cols-2 gap-3">
+        {stats.map((stat: Stat, index: number) => (
           <AnimatedStat
             key={index}
             value={stat.value}

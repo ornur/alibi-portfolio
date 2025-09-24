@@ -3,14 +3,14 @@ import Image from "next/image";
 import { InView } from "../ui/in-view";
 import { AnimatedStats } from "../animated-stats";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTranslations } from "next-intl";
 
 export function AboutMe() {
   const isMobile = useIsMobile();
+  const t = useTranslations("about");
+
   return (
-    <section
-      id="about"
-      className="py-32"
-    >
+    <section id="about" className="py-32">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8">
         {/* Header */}
         <InView
@@ -25,10 +25,10 @@ export function AboutMe() {
         >
           <div className="mb-20 text-center">
             <h2 className="mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
-              Обо мне
+              {t("title")}
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-              Режиссёр и продюсер с 4-летним опытом создания киношного контента
+              {t("subtitle")}
             </p>
           </div>
         </InView>
@@ -82,20 +82,13 @@ export function AboutMe() {
             >
               <div className="space-y-3">
                 <h3 className="font-cyrillic text-3xl font-bold">
-                  Алиби Алишер
+                  {t("name")}
                 </h3>
                 <p className="font-cyrillic text-base leading-relaxed text-muted-foreground">
-                  Я занимаюсь видеопроизводством более 4 лет, из которых
-                  последние 2 года — в роли режиссёра, продюсера и
-                  контент-продюсера брендов.
+                  {t("intro1")}
                 </p>
                 <p className="font-cyrillic text-base leading-relaxed text-muted-foreground">
-                  Моя специализация — создание киношного видеоконтента: от
-                  разработки концепции и написания сценариев до организации
-                  съёмочного процесса и аналитики готового продукта. Я помогаю
-                  брендам и личностям получать не только качественную визуальную
-                  упаковку, но и измеримые результаты в виде охватов,
-                  подписчиков и роста узнаваемости.
+                  {t("intro2")}
                 </p>
               </div>
             </InView>

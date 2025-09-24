@@ -1,9 +1,14 @@
+"use client";
 import { InView } from "@/components/ui/in-view";
-import { achievements } from "@/constants";
+import { getAchievements } from "@/constants";
+import { useTranslations } from "next-intl";
 
 export function Achievements() {
+  const t = useTranslations();
+  const achievements = getAchievements((key) => t(key));
+
   return (
-    <div id="results" className="mx-auto max-w-6xl pb-32 px-4">
+    <div id="results" className="mx-auto max-w-6xl px-4 pb-32">
       <InView
         variants={{
           hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
@@ -14,10 +19,10 @@ export function Achievements() {
       >
         <div className="mt-24">
           <h3 className="mb-12 text-center font-cyrillic text-3xl font-bold">
-            Результаты и достижения
+            {t("navigation.results")}
           </h3>
           <div className="mx-auto max-w-4xl space-y-4">
-            {achievements.map((achievement, index) => (
+            {achievements.map((achievement: string, index: number) => (
               <InView
                 key={index}
                 variants={{

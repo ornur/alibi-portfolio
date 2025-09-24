@@ -3,15 +3,9 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useTranslations } from "next-intl";
 import React from "react";
-
-const menuItems = [
-  { name: "Обо мне", href: "#about" },
-  { name: "Проекты", href: "#projects" },
-  { name: "Результаты", href: "#results" },
-  { name: "Обучение", href: "#education" },
-  { name: "Контакты", href: "#contacts" },
-];
 
 const handleSmoothScroll = (
   e: React.MouseEvent<HTMLAnchorElement>,
@@ -33,7 +27,17 @@ const handleSmoothScroll = (
 };
 
 export const HeroHeader = () => {
+  const t = useTranslations("navigation");
   const [menuState, setMenuState] = React.useState(false);
+
+  const menuItems = [
+    { name: t("about"), href: "#about" },
+    { name: t("projects"), href: "#projects" },
+    { name: t("results"), href: "#results" },
+    { name: t("education"), href: "#education" },
+    { name: t("contacts"), href: "#contacts" },
+  ];
+
   return (
     <header>
       <nav
@@ -60,7 +64,7 @@ export const HeroHeader = () => {
                 <X className="absolute inset-0 m-auto size-6 scale-0 -rotate-180 opacity-0 duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100" />
               </button>
 
-              <div className="hidden lg:block">
+              <div className="hidden lg:flex lg:items-center lg:gap-8">
                 <ul className="flex gap-8 text-sm">
                   {menuItems.map((item, index) => (
                     <li key={index}>
@@ -99,7 +103,7 @@ export const HeroHeader = () => {
                     href="#contacts"
                     onClick={(e) => handleSmoothScroll(e, "#contacts")}
                   >
-                    <span>Связаться</span>
+                    <span>{t("contacts")}</span>
                   </Link>
                 </Button>
                 <Button asChild size="sm">
@@ -107,10 +111,11 @@ export const HeroHeader = () => {
                     href="#education"
                     onClick={(e) => handleSmoothScroll(e, "#education")}
                   >
-                    <span>Обучение</span>
+                    <span>{t("education")}</span>
                   </Link>
                 </Button>
               </div>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>

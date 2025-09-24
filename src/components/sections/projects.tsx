@@ -1,6 +1,6 @@
 "use client";
 import { InView } from "@/components/ui/in-view";
-import { keyProjects } from "@/constants";
+import { getKeyProjects, type Project } from "@/constants";
 import {
   MorphingDialog,
   MorphingDialogTrigger,
@@ -14,9 +14,13 @@ import {
 } from "@/components/motion-primitives/morphing-dialog";
 import { PlusIcon, CalendarIcon, TargetIcon } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTranslations } from "next-intl";
 
 export function Projects() {
   const isMobile = useIsMobile();
+  const t = useTranslations();
+  const keyProjects = getKeyProjects((key) => t(key));
+
   return (
     <section
       id="projects"
@@ -35,17 +39,16 @@ export function Projects() {
         >
           <div className="mb-16 text-center">
             <h2 className="mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
-              Проекты
+              {t("projects.title")}
             </h2>
             <p className="mx-auto max-w-3xl font-cyrillic text-xl text-muted-foreground">
-              Избранные работы, которые создавали миллионные охваты и укрепляли
-              бренды
+              {t("projects.subtitle")}
             </p>
           </div>
         </InView>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {keyProjects.map((project, index) => (
+          {keyProjects.map((project: Project, index: number) => (
             <InView
               key={project.id}
               variants={{
@@ -159,7 +162,7 @@ export function Projects() {
                             />
                             <div>
                               <h4 className="mb-1 font-cyrillic font-semibold text-foreground">
-                                Результаты
+                                {t("projects.results")}
                               </h4>
                               <p className="font-cyrillic text-sm text-muted-foreground">
                                 {project.results}
@@ -169,17 +172,19 @@ export function Projects() {
 
                           <div>
                             <h4 className="mb-2 font-cyrillic font-semibold text-foreground">
-                              Категории
+                              {t("projects.categories")}
                             </h4>
                             <div className="flex flex-wrap gap-2">
-                              {project.tags.map((tag, tagIndex) => (
-                                <span
-                                  key={tagIndex}
-                                  className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
+                              {project.tags.map(
+                                (tag: string, tagIndex: number) => (
+                                  <span
+                                    key={tagIndex}
+                                    className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+                                  >
+                                    {tag}
+                                  </span>
+                                )
+                              )}
                             </div>
                           </div>
                         </div>

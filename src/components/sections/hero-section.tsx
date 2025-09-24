@@ -6,6 +6,7 @@ import Image from "next/image";
 import { HeroHeader } from "@/components/sections/header";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { ProgressiveBlur } from "@/components/motion-primitives/progressive-blur";
+import { useTranslations } from "next-intl";
 
 const handleSmoothScroll = (
   e: React.MouseEvent<HTMLAnchorElement>,
@@ -27,6 +28,8 @@ const handleSmoothScroll = (
 };
 
 export default function HeroSection() {
+  const t = useTranslations("hero");
+
   return (
     <>
       <HeroHeader />
@@ -36,11 +39,10 @@ export default function HeroSection() {
             <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
               <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-8 max-w-2xl font-latin text-5xl font-medium text-balance md:text-6xl lg:mt-16 xl:text-7xl">
-                  Alibi Alisher
+                  {t("title")}
                 </h1>
                 <p className="mt-8 max-w-2xl font-cyrillic text-lg text-pretty">
-                  Режиссёр и продюсер. Создаю киношный контент, сценарии и
-                  миллионные рилсы.
+                  {t("subtitle")}
                 </p>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
@@ -50,7 +52,7 @@ export default function HeroSection() {
                       onClick={(e) => handleSmoothScroll(e, "#projects")}
                     >
                       <span className="font-cyrillic text-nowrap">
-                        Мои проекты
+                        {t("myProjects")}
                       </span>
                     </Link>
                   </Button>
@@ -66,7 +68,7 @@ export default function HeroSection() {
                       onClick={(e) => handleSmoothScroll(e, "#contacts")}
                     >
                       <span className="font-cyrillic text-nowrap">
-                        Связаться
+                        {t("contact")}
                       </span>
                     </Link>
                   </Button>
@@ -87,7 +89,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
                 <p className="text-end font-cyrillic text-sm text-nowrap">
-                  Клиенты и партнёры
+                  {t("clients")}
                 </p>
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">

@@ -5,9 +5,12 @@ import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { famousPersonalities } from "@/constants";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTranslations } from "next-intl";
 
 export function FamousPersonalities() {
   const isMobile = useIsMobile();
+  const t = useTranslations("famousPersonalities");
+
   return (
     <section className="relative overflow-hidden bg-background py-24">
       <div className="mx-auto w-full px-4">
@@ -23,11 +26,10 @@ export function FamousPersonalities() {
         >
           <div className="mb-16 text-center">
             <h2 className="mb-4 font-cyrillic text-3xl font-bold text-foreground md:text-4xl">
-              Известные личности
+              {t("title")}
             </h2>
             <p className="mx-auto max-w-2xl font-cyrillic text-lg text-muted-foreground">
-              В моём портфолио — проекты с известными актёрами и публичными
-              личностями Казахстана
+              {t("subtitle")}
             </p>
           </div>
         </InView>
@@ -94,9 +96,7 @@ export function FamousPersonalities() {
         >
           <div className="mt-16 text-center">
             <p className="mx-auto max-w-3xl font-cyrillic text-base text-muted-foreground">
-              Создание контента с известными личностями требует особого подхода
-              — от разработки концепции до финальной подачи. Каждый проект
-              уникален и направлен на раскрытие личности через киношный язык.
+              {t("description")}
             </p>
           </div>
         </InView>

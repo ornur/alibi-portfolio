@@ -1,30 +1,39 @@
+"use client";
 import { Logo } from "@/components/logo";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const links = [
-  {
-    title: "Обо мне",
-    href: "#about",
-  },
-  {
-    title: "Проекты",
-    href: "#projects",
-  },
-  {
-    title: "Результаты",
-    href: "#results",
-  },
-  {
-    title: "Обучение",
-    href: "#education",
-  },
-  {
-    title: "Контакты",
-    href: "#contacts",
-  },
-];
+interface FooterLink {
+  title: string;
+  href: string;
+}
 
 export default function FooterSection() {
+  const t = useTranslations("footer");
+
+  const links = [
+    {
+      title: t("about"),
+      href: "#about",
+    },
+    {
+      title: t("projects"),
+      href: "#projects",
+    },
+    {
+      title: t("results"),
+      href: "#results",
+    },
+    {
+      title: t("education"),
+      href: "#education",
+    },
+    {
+      title: t("contacts"),
+      href: "#contacts",
+    },
+  ];
+
   return (
     <footer className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
@@ -33,7 +42,7 @@ export default function FooterSection() {
         </Link>
 
         <div className="my-8 flex flex-wrap justify-center gap-6 font-cyrillic text-sm font-semibold">
-          {links.map((link, index) => (
+          {links.map((link: FooterLink, index: number) => (
             <Link
               key={index}
               href={link.href}
@@ -124,7 +133,7 @@ export default function FooterSection() {
           </Link>
         </div>
         <span className="block text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Alibi Alisher. Все права защищены.
+          © {new Date().getFullYear()} Alibi Alisher. {t("copyright")}
         </span>
       </div>
     </footer>

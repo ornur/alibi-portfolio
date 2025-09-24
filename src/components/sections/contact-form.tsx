@@ -1,21 +1,22 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { BorderTrail } from "../ui/border-trail";
+import { useTranslations } from "next-intl";
 
 export default function ContactSection() {
+  const t = useTranslations("contact");
+
   return (
     <section id="contacts" className="py-32">
       <div className="mx-auto max-w-3xl px-8 font-cyrillic lg:px-0">
         <h1 className="text-center text-4xl font-semibold lg:text-5xl">
-          Контакты
+          {t("title")}
         </h1>
-        <p className="mt-4 text-center">
-          Готов к сотрудничеству с брендами и компаниями, которым нужен
-          качественный визуальный контент и ощутимый результат.
-        </p>
+        <p className="mt-4 text-center">{t("subtitle")}</p>
 
         <Card className="relative mx-auto mt-12 max-w-4xl border-gray-500/20 bg-background p-8 text-foreground shadow-md sm:p-16">
           <BorderTrail
@@ -27,11 +28,10 @@ export default function ContactSection() {
           />
           <div>
             <h2 className="text-xl font-semibold">
-              Давайте обсудим ваш проект
+              {t("form-title")}
             </h2>
             <p className="mt-4 text-sm">
-              Свяжитесь со мной для обсуждения создания киношного контента для
-              вашего бренда.
+              {t("form-description")}
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export default function ContactSection() {
             className="mt-6 space-y-6 *:space-y-3 **:[&>label]:block"
           >
             <div>
-              <Label htmlFor="name">Имя</Label>
+              <Label htmlFor="name">{t("form-name")}</Label>
               <Input type="text" id="name" required />
             </div>
 
@@ -55,19 +55,19 @@ export default function ContactSection() {
             </div>
 
             <div>
-              <Label htmlFor="msg">Сообщение</Label>
+              <Label htmlFor="msg">{t("form-message")}</Label>
               <Textarea
                 id="msg"
                 rows={3}
-                placeholder="Расскажите о вашем проекте..."
+                placeholder={t("form-message-placeholder")}
               />
             </div>
 
-            <Button>Отправить</Button>
+            <Button>{t("form-submit")}</Button>
           </form>
 
           <div className="mt-8 space-y-4 border-t pt-8">
-            <h3 className="font-semibold">Или свяжитесь напрямую:</h3>
+            <h3 className="font-semibold">{t("form-subtext")}</h3>
             <div className="space-y-2 font-latin text-sm">
               <p>
                 <span className="font-medium">Email:</span>{" "}
