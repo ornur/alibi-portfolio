@@ -33,7 +33,7 @@ export function FamousPersonalities() {
             visible: { opacity: 1, scale: 1 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
         >
           <div className="relative">
             <InfiniteSlider
@@ -79,7 +79,7 @@ export function FamousPersonalities() {
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
         >
           <div className="mt-16 text-center">
             <p className="mx-auto max-w-3xl font-cyrillic text-base text-muted-foreground">

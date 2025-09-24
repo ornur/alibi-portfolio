@@ -3,11 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
+import { BorderTrail } from "../ui/border-trail";
 
 export default function ContactSection() {
   return (
     <section id="contacts" className="py-32">
-      <div className="mx-auto max-w-3xl px-8 lg:px-0 font-cyrillic">
+      <div className="mx-auto max-w-3xl px-8 font-cyrillic lg:px-0">
         <h1 className="text-center text-4xl font-semibold lg:text-5xl">
           Контакты
         </h1>
@@ -16,7 +17,14 @@ export default function ContactSection() {
           качественный визуальный контент и ощутимый результат.
         </p>
 
-        <Card className="mx-auto mt-12 max-w-xl border-muted-foreground bg-background p-8 text-foreground shadow-md sm:p-16">
+        <Card className="relative mx-auto mt-12 max-w-4xl border-gray-500/20 bg-background p-8 text-foreground shadow-md sm:p-16">
+          <BorderTrail
+            style={{
+              boxShadow:
+                "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
+            }}
+            size={150}
+          />
           <div>
             <h2 className="text-xl font-semibold">
               Давайте обсудим ваш проект
@@ -29,7 +37,7 @@ export default function ContactSection() {
 
           <form
             action=""
-            className="mt-12 space-y-6 *:space-y-3 **:[&>label]:block"
+            className="mt-6 space-y-6 *:space-y-3 **:[&>label]:block"
           >
             <div>
               <Label htmlFor="name">Имя</Label>
@@ -60,7 +68,7 @@ export default function ContactSection() {
 
           <div className="mt-8 space-y-4 border-t pt-8">
             <h3 className="font-semibold">Или свяжитесь напрямую:</h3>
-            <div className="space-y-2 text-sm font-latin">
+            <div className="space-y-2 font-latin text-sm">
               <p>
                 <span className="font-medium">Email:</span>{" "}
                 <a
