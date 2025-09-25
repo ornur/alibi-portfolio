@@ -37,6 +37,7 @@ export default function ContactSection() {
       window.open(whatsappUrl, "_blank");
       e.currentTarget.reset();
     } catch (error) {
+      console.error("Error opening WhatsApp:", error);
       alert(
         isKazakh
           ? "WhatsApp ашуда қате болды. Қайталап көріңіз."
