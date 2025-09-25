@@ -36,10 +36,12 @@
     "form-title": "Жобаңызды талқылайық",
     "form-description": "Сізбен байланысқа шығу үшін төмендегі форманы толтырыңыз.",
     "form-name": "Аты-жөніңіз",
+    "form-phone": "Телефон",
     "form-message": "Хабарлама",
     "form-message-placeholder": "Жобаныз туралы айтып беріңіз...",
     "form-subtext": "Немесе тікелей байланысыңыз:",
-    "form-submit": "Жіберу"
+    "form-submit": "Жіберу",
+    "form-submitting": "Жіберілуде..."
   },
   "about": {
     "title": "Мен туралы",

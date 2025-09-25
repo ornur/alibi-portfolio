@@ -43,10 +43,12 @@
     "form-title": "Давайте обсудим ваш проект",
     "form-description": "Заполните форму ниже, чтобы я мог с вами связаться.",
     "form-name": "Имя",
+    "form-phone": "Телефон",
     "form-message": "Сообщение",
     "form-message-placeholder": "Расскажите о вашем проекте...",
     "form-subtext": "Или свяжитесь напрямую:",
-    "form-submit": "Отправить"
+    "form-submit": "Отправить",
+    "form-submitting": "Отправка..."
   },
   "footer": {
     "about": "Обо мне",

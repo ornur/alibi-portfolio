@@ -6,9 +6,46 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { BorderTrail } from "../ui/border-trail";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { useState } from "react";
 
 export default function ContactSection() {
   const t = useTranslations("contact");
+  const locale = useLocale();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("msg") as string;
+
+    // Format message for WhatsApp based on locale
+    const isKazakh = locale === "kk";
+    const whatsappMessage = isKazakh
+      ? `*Аты-жөні:* ${name}%0A*Телефон:* ${phone}%0A*Email:* ${email}%0A*Хабарлама:*%0A${message}`
+      : `*Имя:* ${name}%0A*Телефон:* ${phone}%0A*Email:* ${email}%0A*Сообщение:*%0A${message}`;
+
+    const whatsappNumber = "77007280546";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    try {
+      window.open(whatsappUrl, "_blank");
+      e.currentTarget.reset();
+    } catch (error) {
+      alert(
+        isKazakh
+          ? "WhatsApp ашуда қате болды. Қайталап көріңіз."
+          : "Ошибка при открытии WhatsApp. Попробуйте еще раз."
+      );
+    }
+
+    setIsSubmitting(false);
+  };
 
   return (
     <section id="contacts" className="py-32">
@@ -27,43 +64,52 @@ export default function ContactSection() {
             size={60}
           />
           <div>
-            <h2 className="text-xl font-semibold">
-              {t("form-title")}
-            </h2>
-            <p className="mt-4 text-sm">
-              {t("form-description")}
-            </p>
+            <h2 className="text-xl font-semibold">{t("form-title")}</h2>
+            <p className="mt-4 text-sm">{t("form-description")}</p>
           </div>
 
           <form
-            action=""
+            onSubmit={handleSubmit}
             className="mt-6 space-y-6 *:space-y-3 **:[&>label]:block"
           >
             <div>
               <Label htmlFor="name">{t("form-name")}</Label>
-              <Input type="text" id="name" required />
+              <Input type="text" id="name" name="name" required />
             </div>
 
             <div>
-              <Label htmlFor="phone">Телефон</Label>
-              <Input type="tel" id="phone" required />
+              <Label htmlFor="phone">{t("form-phone")}</Label>
+              <Input type="tel" id="phone" name="phone" required />
             </div>
 
             <div>
               <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" required />
+              <Input type="email" id="email" name="email" required />
             </div>
 
             <div>
               <Label htmlFor="msg">{t("form-message")}</Label>
               <Textarea
                 id="msg"
+                name="msg"
                 rows={3}
                 placeholder={t("form-message-placeholder")}
               />
             </div>
 
-            <Button>{t("form-submit")}</Button>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full sm:w-auto"
+            >
+              {isSubmitting ? t("form-submitting") : `${t("form-submit")}`}
+            </Button>
+
+            <p className="mt-2 text-xs text-muted-foreground">
+              {locale === "kk"
+                ? "* Форманы жібергеннен кейін WhatsApp ашылады және хабарлама дайындалады"
+                : "* После отправки формы откроется WhatsApp с готовым сообщением"}
+            </p>
           </form>
 
           <div className="mt-8 space-y-4 border-t pt-8">
