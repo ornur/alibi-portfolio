@@ -24,10 +24,10 @@ export default function FooterSection() {
       title: t("results"),
       href: "#results",
     },
-    {
-      title: t("education"),
-      href: "#education",
-    },
+    // {
+    //   title: t("education"),
+    //   href: "#education",
+    // },
     {
       title: t("contacts"),
       href: "#contacts",

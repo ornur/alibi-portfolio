@@ -34,7 +34,7 @@ export const HeroHeader = () => {
     { name: t("about"), href: "#about" },
     { name: t("projects"), href: "#projects" },
     { name: t("results"), href: "#results" },
-    { name: t("education"), href: "#education" },
+    { name: t("gallery"), href: "#gallery" },
     { name: t("contacts"), href: "#contacts" },
   ];
 
@@ -106,14 +106,14 @@ export const HeroHeader = () => {
                     <span>{t("contacts")}</span>
                   </Link>
                 </Button>
-                <Button asChild size="sm">
+                {/* <Button asChild size="sm">
                   <Link
                     href="#education"
                     onClick={(e) => handleSmoothScroll(e, "#education")}
                   >
                     <span>{t("education")}</span>
                   </Link>
-                </Button>
+                </Button> */}
               </div>
               <LanguageSwitcher />
             </div>

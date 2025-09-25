@@ -6,6 +6,7 @@ import { AboutMe } from "@/components/sections/about-me";
 import { Projects } from "@/components/sections/projects";
 import { Achievements } from "@/components/sections/achievements";
 import { FamousPersonalities } from "@/components/sections/famous-personalities";
+import { Gallery } from "@/components/sections/gallery";
 import { LogosBanner } from "@/components/sections/logos-banner";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Projects />
       <Achievements />
       <FamousPersonalities />
+      <Gallery />
       <ContactSection />
       <FooterSection />
     </div>

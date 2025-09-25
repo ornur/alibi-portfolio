@@ -17,10 +17,10 @@ export function Achievements() {
         viewOptions={{ margin: "0px 0px -150px 0px" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <div className="mt-24">
-          <h3 className="mb-12 text-center font-cyrillic text-3xl font-bold">
+          <div className="mb-16 text-center">
+            <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
             {t("navigation.results")}
-          </h3>
+          </h2>
           <div className="mx-auto max-w-4xl space-y-4">
             {achievements.map((achievement: string, index: number) => (
               <InView

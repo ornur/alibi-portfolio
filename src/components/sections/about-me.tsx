@@ -23,8 +23,8 @@ export function AboutMe() {
           }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          <div className="mb-20 text-center">
-            <h2 className="mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
               {t("title")}
             </h2>
             <p className="mx-auto max-w-3xl text-xl text-muted-foreground">

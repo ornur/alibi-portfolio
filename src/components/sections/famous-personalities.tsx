@@ -25,7 +25,7 @@ export function FamousPersonalities() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
           <div className="mb-16 text-center">
-            <h2 className="mb-4 font-cyrillic text-3xl font-bold text-foreground md:text-4xl">
+            <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
               {t("title")}
             </h2>
             <p className="mx-auto max-w-2xl font-cyrillic text-lg text-muted-foreground">

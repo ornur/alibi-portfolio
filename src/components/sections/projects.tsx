@@ -38,7 +38,7 @@ export function Projects() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <div className="mb-16 text-center">
-            <h2 className="mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
+            <h2 className="mb-6 text-5xl font-bold text-white md:text-6xl">
               {t("projects.title")}
             </h2>
             <p className="mx-auto max-w-3xl font-cyrillic text-xl text-muted-foreground">
