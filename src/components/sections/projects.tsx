@@ -8,7 +8,6 @@ import {
   MorphingDialogTitle,
   MorphingDialogImage,
   MorphingDialogSubtitle,
-  MorphingDialogClose,
   MorphingDialogDescription,
   MorphingDialogContainer,
 } from "@/components/motion-primitives/morphing-dialog";
