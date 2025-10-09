@@ -14,8 +14,8 @@ export default function Home() {
     <div className="mx-auto">
       <HeroHeader />
       <HeroSection />
-      <LogosBanner />
       <AboutMe />
+      <LogosBanner />
       <Projects />
       <Achievements />
       <FamousPersonalities />
