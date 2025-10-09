@@ -6,7 +6,7 @@ import { locales } from "./global";
 export default getRequestConfig(async () => {
   const store = await cookies();
   const locale =
-    (store.get("locale")?.value as (typeof locales)[number]) || "kk";
+    (store.get("locale")?.value as (typeof locales)[number]) || "ru";
 
   return {
     locale,

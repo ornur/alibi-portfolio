@@ -1,0 +1,143 @@
+{
+  "navigation": {
+    "about": "About Me",
+    "projects": "Projects",
+    "results": "Results and Achievements",
+    "gallery": "Gallery",
+    "education": "Education",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Alibi Alisher",
+    "subtitle": "Director and producer. Creating cinematic content, scripts and million-view reels.",
+    "myProjects": "My Projects",
+    "contact": "Get in Touch",
+    "clients": "Clients and Partners"
+  },
+  "stats": {
+    "experience": "years of experience",
+    "projects": "projects",
+    "coverage": "reach",
+    "newSubscribers": "new subscribers"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Featured works that created millions of views and strengthened brands",
+    "results": "Results and Achievements",
+    "categories": "Categories"
+  },
+  "famousPersonalities": {
+    "title": "Famous Personalities",
+    "subtitle": "My portfolio includes projects with renowned actors and public figures from Kazakhstan",
+    "description": "Creating content with famous personalities requires a special approach — from concept development to final presentation. Each project is unique and aimed at revealing personality through cinematic language.",
+    "personalities": [
+      {
+        "id": 1,
+        "name": "Ayan Otepbergen",
+        "profession": "Actor"
+      },
+      {
+        "id": 2,
+        "name": "Asylkhan Tolepov",
+        "profession": "Actor"
+      },
+      {
+        "id": 3,
+        "name": "Rustem Zhanyamanov",
+        "profession": "Actor"
+      },
+      {
+        "id": 4,
+        "name": "Mansur Kudaibergenov",
+        "profession": "Musician"
+      },
+      {
+        "id": 5,
+        "name": "Abuali Omirali",
+        "profession": "Director, Producer"
+      },
+      {
+        "id": 6,
+        "name": "Aqarys Adilzhan",
+        "profession": "Blogger, Storyteller"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Director and producer with 4 years of experience creating cinematic content",
+    "name": "Alibi Alisher",
+    "intro1": "I have been involved in video production for over 4 years, with the last 2 years in the role of director, producer, and brand content producer.",
+    "intro2": "My specialty is creating cinematic video content: from concept development and scriptwriting to organizing the filming process and analyzing the finished product. I help brands and personalities get not only quality visual packaging, but also measurable results in terms of reach, subscribers, and increased recognition."
+  },
+  "contact": {
+    "title": "Contacts",
+    "subtitle": "Ready to collaborate with brands and companies that need quality visual content and tangible results.",
+    "form-title": "Let's discuss your project",
+    "form-description": "Fill out the form below so I can get in touch with you.",
+    "form-name": "Name",
+    "form-phone": "Phone",
+    "form-message": "Message",
+    "form-message-placeholder": "Tell me about your project...",
+    "form-subtext": "Or contact directly:",
+    "form-submit": "Send",
+    "form-submitting": "Sending..."
+  },
+  "gallery": {
+    "title": "Gallery of Works",
+    "subtitle": "Collection of the best moments from the filming process and finished works"
+  },
+  "footer": {
+    "about": "About Me",
+    "projects": "Projects",
+    "results": "Results",
+    "education": "Education",
+    "contacts": "Contacts",
+    "copyright": "All rights reserved."
+  },
+  "achievements": {
+    "myrza": "MyRza Brand — 12 million reach, +15,000 new subscribers",
+    "sebebin": "Sebebin Aitayin FM — over 5 million reach",
+    "tary": "Tary Coffee — reach over 1.5 million",
+    "international": "Working with international companies",
+    "comprehensive": "Comprehensive approach: from idea to result"
+  },
+  "keyProjects": {
+    "hajj": {
+      "title": "Hajj promotional video in Saudi Arabia",
+      "client": "Spiritual Journeys",
+      "description": "Creating a cinematic promotional video for spiritual travel to holy places in Saudi Arabia. Filming was conducted in several cities, including Mecca and Medina.",
+      "results": "Over 2 million views in the first week"
+    },
+    "restaurant": {
+      "title": "Restaurant promotion in Medina",
+      "client": "Yourt Medina",
+      "description": "Concept development and creation of a series of promotional videos for a restaurant in Medina. The project included filming the interior, dishes and atmosphere of the establishment.",
+      "results": "40% increase in attendance"
+    },
+    "actors": {
+      "title": "Reel series with iconic actors",
+      "client": "Kazakh Actors",
+      "description": "Creating a series of cinematic reels featuring famous Kazakh actors: Ayan Ötepbergen, Asylkhan Tölepov, Rustem Zhanyamanov and others.",
+      "results": "Total reach of over 8 million views"
+    },
+    "tary": {
+      "title": "Collaboration with Tary Coffee",
+      "client": "Tary Coffee",
+      "description": "Promoting the coffee shop chain through creating atmospheric videos showcasing coffee quality and the cozy atmosphere of the establishments.",
+      "results": "1.5 million reach, increased brand recognition"
+    },
+    "tumi": {
+      "title": "Tumi commercial",
+      "client": "Tumi Kazakhstan",
+      "description": "Creating a premium commercial for Tumi in Saudi Arabia, emphasizing the quality and prestige of the brand.",
+      "results": "International campaign recognition"
+    },
+    "myrza": {
+      "title": "MyRza Brand",
+      "client": "MyRza Brand",
+      "description": "Comprehensive work on visual content for a fashion brand, including concept creation, filming and post-production.",
+      "results": "12 million reach"
+    }
+  }
+}

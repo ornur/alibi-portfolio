@@ -25,9 +25,9 @@ export default function ContactSection() {
     const message = formData.get("msg") as string;
 
     // Format message for WhatsApp based on locale
-    const isKazakh = locale === "kk";
-    const whatsappMessage = isKazakh
-      ? `*Аты-жөні:* ${name}%0A*Телефон:* ${phone}%0A*Email:* ${email}%0A*Хабарлама:*%0A${message}`
+    const isEnglish = locale === "en";
+    const whatsappMessage = isEnglish
+      ? `*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Message:*%0A${message}`
       : `*Имя:* ${name}%0A*Телефон:* ${phone}%0A*Email:* ${email}%0A*Сообщение:*%0A${message}`;
 
     const whatsappNumber = "77007280546";
@@ -39,8 +39,8 @@ export default function ContactSection() {
     } catch (error) {
       console.error("Error opening WhatsApp:", error);
       alert(
-        isKazakh
-          ? "WhatsApp ашуда қате болды. Қайталап көріңіз."
+        isEnglish
+          ? "Error opening WhatsApp. Please try again."
           : "Ошибка при открытии WhatsApp. Попробуйте еще раз."
       );
     }
@@ -107,8 +107,8 @@ export default function ContactSection() {
             </Button>
 
             <p className="mt-2 text-xs text-muted-foreground">
-              {locale === "kk"
-                ? "* Форманы жібергеннен кейін WhatsApp ашылады және хабарлама дайындалады"
+              {locale === "en"
+                ? "* After submitting the form, WhatsApp will open with a prepared message"
                 : "* После отправки формы откроется WhatsApp с готовым сообщением"}
             </p>
           </form>

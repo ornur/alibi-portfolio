@@ -10,7 +10,7 @@ export function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition();
 
   const toggleLanguage = () => {
-    const newLocale = locale === "kk" ? "ru" : "kk";
+    const newLocale = locale === "ru" ? "en" : "ru";
     startTransition(() => {
       setUserLocale(newLocale);
     });
@@ -24,7 +24,7 @@ export function LanguageSwitcher() {
       disabled={isPending}
       className="h-auto border-border/40 bg-background/50 px-3 py-1 text-xs font-medium backdrop-blur-sm hover:bg-accent/50"
     >
-      {locale === "kk" ? "RU" : "KZ"}
+      {locale === "ru" ? "EN" : "RU"}
     </Button>
   );
 }

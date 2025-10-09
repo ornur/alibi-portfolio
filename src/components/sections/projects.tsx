@@ -107,9 +107,9 @@ export function Projects() {
                         <CalendarIcon size={12} />
                         {project.year}
                       </span>
-                      <span className="truncate text-xs text-muted-foreground">
+                      {/* <span className="truncate text-xs text-muted-foreground">
                         {project.tags[0]}
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </MorphingDialogTrigger>
@@ -170,7 +170,7 @@ export function Projects() {
                             </div>
                           </div>
 
-                          <div>
+                          {/* <div>
                             <h4 className="mb-2 font-cyrillic font-semibold text-foreground">
                               {t("projects.categories")}
                             </h4>
@@ -186,7 +186,7 @@ export function Projects() {
                                 )
                               )}
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                       </MorphingDialogDescription>
                     </div>

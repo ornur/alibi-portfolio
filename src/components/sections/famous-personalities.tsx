@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 export function FamousPersonalities() {
   const isMobile = useIsMobile();
   const t = useTranslations("famousPersonalities");
+  const personalities = famousPersonalities((key) => t(key));
 
   return (
     <section className="relative overflow-hidden bg-background py-24">
@@ -50,7 +51,7 @@ export function FamousPersonalities() {
               speed={60}
               className="py-8"
             >
-              {famousPersonalities.map((personality) => (
+              {personalities.map((personality) => (
                 <div
                   key={personality.id}
                   className="group flex w-55 flex-col overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-2xl lg:w-68"

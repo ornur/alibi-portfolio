@@ -1,6 +1,6 @@
-import messages from "../../messages/kk.json";
+import messages from "../../messages/ru.json";
 
-export const locales = ["kk", "ru"] as const;
+export const locales = ["ru", "en"] as const;
 
 declare module "next-intl" {
   interface AppConfig {

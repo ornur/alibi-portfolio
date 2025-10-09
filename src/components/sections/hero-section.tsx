@@ -29,7 +29,7 @@ export default function HeroSection() {
 
   return (
     <main className="py-30 md:py-40 lg:py-56">
-      <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block lg:h-full">
+      <div className="relative mx-auto flex max-w-6xl lg:mt-40 flex-col px-6 lg:block lg:h-full">
         <div className="mx-auto max-w-lg text-center lg:ml-0 lg:h-full lg:w-1/2 lg:text-left">
           <h1 className="mt-8 max-w-2xl font-latin text-5xl font-medium text-balance md:text-6xl lg:mt-16 xl:text-7xl">
             {t("title")}
@@ -68,7 +68,7 @@ export default function HeroSection() {
           </div>
         </div>
         <Image
-          className="-z-10 order-first ml-auto h-120 w-full mask-b-from-white mask-b-from-80% mask-b-to-black mask-l-from-white mask-l-from-50% mask-l-to-black mask-luminance object-cover sm:h-96 lg:absolute lg:inset-0 lg:-top-40 lg:-right-80 lg:order-last lg:aspect-[9/13] lg:h-180 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+          className="-z-10 order-first ml-auto h-120 w-full mask-b-from-white mask-b-from-80% mask-b-to-black mask-l-from-white mask-l-from-50% mask-l-to-black mask-luminance object-cover sm:h-96 lg:absolute lg:inset-0 lg:-top-70 lg:-right-80 lg:order-last lg:aspect-[9/13] lg:h-180 lg:object-contain dark:mix-blend-lighten dark:invert-0"
           src="/a-hero-3-4.webp"
           alt="Abstract Object"
           height="1800"

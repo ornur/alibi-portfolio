@@ -8,7 +8,7 @@ export interface Project {
   image: string;
   description: string;
   results: string;
-  tags: string[];
+  // tags: string[];
   year: string;
 }
 
@@ -54,21 +54,27 @@ type AchievementsKeys =
   | "achievements.international"
   | "achievements.comprehensive";
 
+type FamousPersonalityKeys =
+  | "personalities.0.name"
+  | "personalities.0.profession"
+  | "personalities.1.name"
+  | "personalities.1.profession"
+  | "personalities.2.name"
+  | "personalities.2.profession"
+  | "personalities.3.name"
+  | "personalities.3.profession"
+  | "personalities.4.name"
+  | "personalities.4.profession"
+  | "personalities.5.name"
+  | "personalities.5.profession";
+
 type ProjectTranslationFunction = (key: KeyProjectsKeys) => string;
 type AchievementTranslationFunction = (key: AchievementsKeys) => string;
+type FamousPersonalityTranslationFunction = (
+  key: FamousPersonalityKeys
+) => string;
 
 export const getKeyProjects = (t: ProjectTranslationFunction) => [
-  // {
-  //   id: 1,
-  //   title: t("keyProjects.hajj.title"),
-  //   client: t("keyProjects.hajj.client"),
-  //   image:
-  //     "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=600&fit=crop&crop=center",
-  //   description: t("keyProjects.hajj.description"),
-  //   results: t("keyProjects.hajj.results"),
-  //   tags: ["Документальный", "Духовность", "Путешествия"],
-  //   year: "2024",
-  // },
   {
     id: 2,
     title: t("keyProjects.restaurant.title"),
@@ -77,7 +83,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
       "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop&crop=center",
     description: t("keyProjects.restaurant.description"),
     results: t("keyProjects.restaurant.results"),
-    tags: ["Реклама", "Ресторан", "Кулинария"],
+    // tags: ["Реклама", "Ресторан", "Кулинария"],
     year: "2024",
   },
   {
@@ -88,7 +94,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
       "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=600&fit=crop&crop=center",
     description: t("keyProjects.actors.description"),
     results: t("keyProjects.actors.results"),
-    tags: ["Актёры", "Рилсы", "Развлечения"],
+    // tags: ["Актёры", "Рилсы", "Развлечения"],
     year: "2023-2024",
   },
   {
@@ -99,7 +105,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
       "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&h=600&fit=crop&crop=center",
     description: t("keyProjects.tary.description"),
     results: t("keyProjects.tary.results"),
-    tags: ["Бренд", "Кофе", "Атмосфера"],
+    // tags: ["Бренд", "Кофе", "Атмосфера"],
     year: "2023",
   },
   {
@@ -110,7 +116,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop&crop=center",
     description: t("keyProjects.tumi.description"),
     results: t("keyProjects.tumi.results"),
-    tags: ["Люкс", "Реклама", "Международный"],
+    // tags: ["Люкс", "Реклама", "Международный"],
     year: "2024",
   },
   {
@@ -121,7 +127,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&crop=center",
     description: t("keyProjects.myrza.description"),
     results: t("keyProjects.myrza.results"),
-    tags: ["Мода", "Бренд", "Стиль"],
+    // tags: ["Мода", "Бренд", "Стиль"],
     year: "2023",
   },
 ];
@@ -134,47 +140,49 @@ export const getAchievements = (t: AchievementTranslationFunction) => [
   t("achievements.comprehensive"),
 ];
 
-export const famousPersonalities = [
+export const famousPersonalities = (
+  t: FamousPersonalityTranslationFunction
+) => [
   {
     id: 1,
-    name: "Аян Өтепберген",
+    name: t("personalities.0.name"),
     nameEn: "Ayan Otepbergen",
-    profession: "Актёр",
+    profession: t("personalities.0.profession"),
     image: "/users/ayan.jpg",
   },
   {
     id: 2,
-    name: "Асылхан Төлепов",
+    name: t("personalities.1.name"),
     nameEn: "Asylkhan Tolepov",
-    profession: "Актёр",
+    profession: t("personalities.1.profession"),
     image: "/users/asylkhan.jpg",
   },
   {
     id: 3,
-    name: "Рустем Жаныаманов",
+    name: t("personalities.2.name"),
     nameEn: "Rustem Zhanyamanov",
-    profession: "Актёр",
+    profession: t("personalities.2.profession"),
     image: "/users/rustem.png",
   },
   {
     id: 4,
-    name: "Мансур Құдайбергенов",
+    name: t("personalities.3.name"),
     nameEn: "Mansur Kudaibergenov",
-    profession: "Музыкант",
+    profession: t("personalities.3.profession"),
     image: "/users/mansur.png",
   },
   {
     id: 5,
-    name: "Абуали Өмірәли",
+    name: t("personalities.4.name"),
     nameEn: "Abuali Omirali",
-    profession: "Режиссёр, продюсер",
+    profession: t("personalities.4.profession"),
     image: "/users/abuali.jpg",
   },
   {
     id: 6,
-    name: "Ақарыс Әділжан",
+    name: t("personalities.5.name"),
     nameEn: "Aqarys Adilzhan",
-    profession: "Блогер, сторителлер",
+    profession: t("personalities.5.profession"),
     image: "/users/aqarys.png",
   },
 ];

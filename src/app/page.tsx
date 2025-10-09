@@ -8,10 +8,15 @@ import { Achievements } from "@/components/sections/achievements";
 import { FamousPersonalities } from "@/components/sections/famous-personalities";
 import { Gallery } from "@/components/sections/gallery";
 import { LogosBanner } from "@/components/sections/logos-banner";
+import { useLocale } from "next-intl";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
+  const lang = useLocale();
   return (
-    <div className="mx-auto">
+    <div
+      className={cn("mx-auto", lang === "en" ? "font-latin" : "font-cyrillic")}
+    >
       <HeroHeader />
       <HeroSection />
       <AboutMe />
