@@ -53,8 +53,8 @@ export function AboutMe() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/20 to-transparent"></div>
               <Image
-                className="mx-auto h-full rounded-3xl object-cover shadow-2xl lg:mx-0"
-                src="/alibi1.jpg"
+                className="mx-auto h-full rounded-3xl aspect-[3/3.25] saturate-120 object-cover shadow-2xl lg:mx-0"
+                src="/a-halo.webp"
                 alt="Alibi Alisher - Режиссёр и продюсер"
                 width={600}
                 height={600}
