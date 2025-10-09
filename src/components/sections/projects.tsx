@@ -15,6 +15,7 @@ import {
 import { PlusIcon, CalendarIcon, TargetIcon } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTranslations } from "next-intl";
+import ReactPlayer from "react-player";
 
 export function Projects() {
   const isMobile = useIsMobile();
@@ -120,12 +121,27 @@ export function Projects() {
                       borderRadius: "24px",
                       scrollbarGutter: "auto",
                     }}
-                    className="pointer-events-auto relative flex h-auto max-h-[85vh] w-full flex-col border border-border bg-card shadow-2xl sm:w-[600px] lg:w-[700px]"
+                    className="pointer-events-auto relative flex h-auto max-h-[185vh] w-full flex-col border border-border bg-card shadow-2xl sm:w-[600px] lg:w-[700px]"
                   >
-                    <MorphingDialogImage
-                      src={project.image}
-                      alt={project.title}
-                      className="h-64 w-full flex-shrink-0 object-cover"
+                    <ReactPlayer
+                      src={project.video}
+                      playing={false}
+                      controls={true}
+                      muted={true}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        aspectRatio: "16/9",
+                      }}
+                      config={{
+                        vimeo: {
+                          portrait: false,
+                          byline: false,
+                          title: false,
+                          dnt: true,
+                          pip: false,
+                        },
+                      }}
                     />
                     <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-6">
                       <div className="mb-4 flex items-start justify-between">
@@ -190,7 +206,6 @@ export function Projects() {
                         </div>
                       </MorphingDialogDescription>
                     </div>
-                    <MorphingDialogClose className="text-muted-foreground hover:text-foreground" />
                   </MorphingDialogContent>
                 </MorphingDialogContainer>
               </MorphingDialog>

@@ -6,6 +6,7 @@ export interface Project {
   title: string;
   client: string;
   image: string;
+  video?: string;
   description: string;
   results: string;
   // tags: string[];
@@ -81,6 +82,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
     client: t("keyProjects.restaurant.client"),
     image:
       "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop&crop=center",
+    video: "https://vimeo.com/1125433122?share=copy",
     description: t("keyProjects.restaurant.description"),
     results: t("keyProjects.restaurant.results"),
     // tags: ["Реклама", "Ресторан", "Кулинария"],
@@ -114,6 +116,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
     client: t("keyProjects.tumi.client"),
     image:
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop&crop=center",
+    video: "https://vimeo.com/1125432601?share=copy",
     description: t("keyProjects.tumi.description"),
     results: t("keyProjects.tumi.results"),
     // tags: ["Люкс", "Реклама", "Международный"],
@@ -125,6 +128,7 @@ export const getKeyProjects = (t: ProjectTranslationFunction) => [
     client: t("keyProjects.myrza.client"),
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop&crop=center",
+    video: "https://vimeo.com/1125431891?fl=pl&fe=sh",
     description: t("keyProjects.myrza.description"),
     results: t("keyProjects.myrza.results"),
     // tags: ["Мода", "Бренд", "Стиль"],
