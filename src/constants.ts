@@ -58,17 +58,17 @@ type ProjectTranslationFunction = (key: KeyProjectsKeys) => string;
 type AchievementTranslationFunction = (key: AchievementsKeys) => string;
 
 export const getKeyProjects = (t: ProjectTranslationFunction) => [
-  {
-    id: 1,
-    title: t("keyProjects.hajj.title"),
-    client: t("keyProjects.hajj.client"),
-    image:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=600&fit=crop&crop=center",
-    description: t("keyProjects.hajj.description"),
-    results: t("keyProjects.hajj.results"),
-    tags: ["Документальный", "Духовность", "Путешествия"],
-    year: "2024",
-  },
+  // {
+  //   id: 1,
+  //   title: t("keyProjects.hajj.title"),
+  //   client: t("keyProjects.hajj.client"),
+  //   image:
+  //     "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=600&fit=crop&crop=center",
+  //   description: t("keyProjects.hajj.description"),
+  //   results: t("keyProjects.hajj.results"),
+  //   tags: ["Документальный", "Духовность", "Путешествия"],
+  //   year: "2024",
+  // },
   {
     id: 2,
     title: t("keyProjects.restaurant.title"),
@@ -139,7 +139,7 @@ export const famousPersonalities = [
     id: 1,
     name: "Аян Өтепберген",
     nameEn: "Ayan Otepbergen",
-    profession: "Актёр, режиссёр",
+    profession: "Актёр",
     image: "/users/ayan.jpg",
   },
   {
@@ -154,27 +154,27 @@ export const famousPersonalities = [
     name: "Рустем Жаныаманов",
     nameEn: "Rustem Zhanyamanov",
     profession: "Актёр",
-    image: "/users/rustem.webp",
+    image: "/users/rustem.png",
   },
   {
     id: 4,
     name: "Мансур Құдайбергенов",
     nameEn: "Mansur Kudaibergenov",
-    profession: "Актёр",
-    image: "/users/mansur.jpg",
+    profession: "Музыкант",
+    image: "/users/mansur.png",
   },
   {
     id: 5,
     name: "Абуали Өмірәли",
     nameEn: "Abuali Omirali",
-    profession: "Актёр, продюсер",
+    profession: "Режиссёр, продюсер",
     image: "/users/abuali.jpg",
   },
   {
     id: 6,
-    name: "Aqarys",
-    nameEn: "Aqarys",
-    profession: "Публичная личность",
-    image: "/users/aqarys.jpg",
+    name: "Ақарыс Әділжан",
+    nameEn: "Aqarys Adilzhan",
+    profession: "Блогер, сторителлер",
+    image: "/users/aqarys.png",
   },
 ];
