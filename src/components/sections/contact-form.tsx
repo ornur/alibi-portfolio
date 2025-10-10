@@ -60,9 +60,10 @@ export default function ContactSection() {
           <BorderTrail
             style={{
               boxShadow:
-                "0px 0px 60px 30px rgb(255 255 255 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
+                "0px 0px 60px 30px rgb(255 117 23 / 50%), 0 0 100px 60px rgb(0 0 0 / 50%), 0 0 140px 90px rgb(0 0 0 / 50%)",
             }}
             size={60}
+            
           />
           <div>
             <h2 className="text-xl font-semibold">{t("form-title")}</h2>
@@ -101,7 +102,7 @@ export default function ContactSection() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto bg-new-orange hover:bg-loading-orange border-0"
             >
               {isSubmitting ? t("form-submitting") : `${t("form-submit")}`}
             </Button>
