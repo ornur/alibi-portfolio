@@ -5,25 +5,6 @@ import { Button } from "./ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const handleSmoothScroll = (
-  e: React.MouseEvent<HTMLAnchorElement>,
-  href: string
-) => {
-  e.preventDefault();
-  const targetId = href.replace("#", "");
-  const element = document.getElementById(targetId);
-  if (element) {
-    const headerOffset = 80; // Height of fixed header
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
-};
-
 export function Circular() {
   const [isAtBottom, setIsAtBottom] = useState(false);
 
