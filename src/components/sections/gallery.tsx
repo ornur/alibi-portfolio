@@ -15,15 +15,15 @@ const images = [
     height: 500,
   },
   {
-    src: "/gallery/a-chair-dark.webp",
+    src: "/gallery/1.webp",
     height: 700,
   },
   {
-    src: "/gallery/a-chair-light.webp",
+    src: "/gallery/2.webp",
     height: 550,
   },
   {
-    src: "/gallery/a-chair-stand.webp",
+    src: "/gallery/3.webp",
     height: 650,
   },
   {
@@ -35,19 +35,19 @@ const images = [
     height: 600,
   },
   {
-    src: "/gallery/a-light.webp",
+    src: "/gallery/4.webp",
     height: 700,
   },
   {
-    src: "/gallery/a-look-bottom.webp",
+    src: "/gallery/5.webp",
     height: 550,
   },
   {
-    src: "/gallery/a-look.webp",
+    src: "/gallery/6.webp",
     height: 650,
   },
   {
-    src: "/gallery/a-one-hand.webp",
+    src: "/gallery/7.webp",
     height: 500,
   },
   {
@@ -56,20 +56,24 @@ const images = [
   },
 
   {
-    src: "/gallery/a-side-dark.webp",
+    src: "/gallery/8.webp",
     height: 700,
   },
   {
-    src: "/gallery/a-two-hand.webp",
+    src: "/gallery/9.webp",
     height: 550,
   },
   {
-    src: "/gallery/a-writing.webp",
+    src: "/gallery/10.webp",
     height: 600,
   },
   {
     src: "/gallery/a-city.webp",
     height: 500,
+  },
+  {
+    src: "/gallery/11.webp",
+    height: 650,
   },
 ];
 
@@ -129,7 +133,7 @@ export function Gallery() {
             <InfiniteSlider
               key={columnIndex}
               direction="vertical"
-              speed={20 + columnIndex * 3} // Different speeds for each column
+              speed={60 + columnIndex * 3} // Different speeds for each column
               reverse={columnIndex % 2 === 1} // Alternate directions
               className="h-full"
             >
