@@ -180,13 +180,13 @@ export const famousPersonalities = (
     name: t("personalities.4.name"),
     nameEn: "Abuali Omirali",
     profession: t("personalities.4.profession"),
-    image: "/users/abuali.jpg",
+    image: "/users/abuali.png",
   },
   {
     id: 6,
     name: t("personalities.5.name"),
     nameEn: "Aqarys Adilzhan",
     profession: t("personalities.5.profession"),
-    image: "/users/aqarys.png",
+    image: "/users/aqarys.jpg",
   },
 ];
