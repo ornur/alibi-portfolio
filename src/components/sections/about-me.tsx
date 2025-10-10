@@ -81,9 +81,6 @@ export function AboutMe() {
               transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
             >
               <div className="space-y-3">
-                <h3 className="font-cyrillic text-3xl font-bold">
-                  {t("name")}
-                </h3>
                 <p className="font-cyrillic text-base leading-relaxed text-muted-foreground">
                   {t("intro1")}
                 </p>
