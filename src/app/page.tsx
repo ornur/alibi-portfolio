@@ -10,6 +10,7 @@ import { Gallery } from "@/components/sections/gallery";
 import { LogosBanner } from "@/components/sections/logos-banner";
 import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
+import CircularText from "@/components/shadcn-io/circular-effect";
 
 export default function Home() {
   const lang = useLocale();
@@ -27,6 +28,14 @@ export default function Home() {
       <Gallery />
       <ContactSection />
       <FooterSection />
+      <div className="right-10 bottom-10 hidden md:inline-block md:fixed">
+        <CircularText
+          text="ALIBI • ALISHER • ALIBI • ALISHER • "
+          onHover="goBonkers"
+          spinDuration={20}
+          className="text-white"
+        />
+      </div>
     </div>
   );
 }
