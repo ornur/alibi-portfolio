@@ -110,7 +110,7 @@ export function LogosBanner() {
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    className="mx-auto flex h-12 w-26 object-contain"
+                    className="mx-auto flex h-12 w-26 object-contain grayscale brightness-200"
                     width={100}
                     height={48}
                   />
