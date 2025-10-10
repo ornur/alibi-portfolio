@@ -32,8 +32,8 @@ export const HeroHeader = () => {
 
   const menuItems = [
     { name: t("about"), href: "#about" },
+    { name: t("clients"), href: "#companies" },
     { name: t("projects"), href: "#projects" },
-    { name: t("results"), href: "#results" },
     { name: t("gallery"), href: "#gallery" },
     { name: t("contacts"), href: "#contacts" },
   ];
@@ -71,7 +71,7 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         onClick={(e) => handleSmoothScroll(e, item.href)}
-                        className="block font-semibold text-muted-foreground duration-150 hover:text-accent"
+                        className="block font-semibold text-muted-foreground duration-150 hover:text-new-orange"
                       >
                         <span className="font-cyrillic">{item.name}</span>
                       </Link>
@@ -89,7 +89,7 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         onClick={(e) => handleSmoothScroll(e, item.href)}
-                        className="block text-muted-foreground duration-150 hover:text-accent"
+                        className="block text-muted-foreground duration-150 hover:text-new-orange"
                       >
                         <span className="font-cyrillic">{item.name}</span>
                       </Link>
