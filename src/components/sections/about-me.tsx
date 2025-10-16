@@ -50,21 +50,22 @@ export function AboutMe() {
             }}
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/20 to-transparent"></div>
+            <div className="relative aspect-square w-full lg:w-110">
+              <div className="absolute inset-0 scale-90 rounded-full bg-new-orange bg-gradient-to-tr from-primary/20 to-transparent blur-[24px] lg:scale-110" />
               <Image
-                className="mx-auto h-full rounded-3xl aspect-[3/3.25] saturate-120 object-cover shadow-2xl lg:mx-0"
-                src="/a-halo.webp"
+                className="absolute left-6 h-130 top-12 w-65 object-cover saturate-120 lg:mx-0 lg:left-0 lg:top-0 lg:h-170 lg:w-85"
+                src="/a-halo.png"
                 alt="Alibi Alisher - Режиссёр и продюсер"
-                width={600}
-                height={600}
+                width={550}
+                height={500}
                 priority
               />
+              <div className="pointer-events-none absolute -bottom-64 z-10 h-100 w-full bg-gradient-to-t from-black to-transparent lg:-bottom-50 lg:h-50" />
             </div>
           </InView>
 
           {/* Content */}
-          <div className="-mt-3 space-y-6">
+          <div className="-mt-3 z-20 space-y-6">
             {/* Introduction */}
             <InView
               variants={{
