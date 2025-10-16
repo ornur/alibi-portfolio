@@ -41,7 +41,7 @@ export function Circular() {
 
   return (
     <div
-      className="group right-10 bottom-10 hidden md:fixed md:inline-block"
+      className="group right-10 z-30 bottom-10 hidden md:fixed md:inline-block"
       onClick={handleClick}
     >
       <CircularText
