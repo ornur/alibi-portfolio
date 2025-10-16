@@ -1,7 +1,7 @@
 "use client";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
 import { InView } from "@/components/ui/in-view";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useDevice } from "@/hooks/use-device";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -78,11 +78,23 @@ const images = [
 ];
 
 function generateGalleryImages(
-  size: "desktop" | "mobile" | "tablet",
+  size: "desktop" | "mobile" | "tablet" | "mediumDesktop",
   images: { src: string; height: number }[]
 ) {
   const galleryImages = [];
-  const columns = size === "mobile" ? 2 : size === "tablet" ? 3 : 4;
+  let columns = 2;
+  switch (size) {
+    case "mobile":
+      break;
+    case "tablet":
+      break;
+    case "mediumDesktop":
+      columns = 4;
+      break;
+    case "desktop":
+      columns = 4;
+      break;
+  }
   for (let i = 0; i < columns; i++) {
     galleryImages.push(images.filter((_, index) => index % columns === i));
   }
@@ -91,26 +103,30 @@ function generateGalleryImages(
 
 export function Gallery() {
   const t = useTranslations("gallery");
-  const isMobile = useIsMobile();
-  const isTablet =
-    typeof window !== "undefined" &&
-    window.innerWidth >= 768 &&
-    window.innerWidth < 1024;
-  const galleryImages = generateGalleryImages(
-    isMobile ? "mobile" : isTablet ? "tablet" : "desktop",
-    images
-  );
+  const device = useDevice();
+  const galleryImages = generateGalleryImages(device, images);
 
   return (
-    <section id="gallery" className="my-32 overflow-hidden">
+    <section
+      id="gallery"
+      className="my-32 overflow-hidden"
+      style={{ scrollbarGutter: "auto" }}
+    >
       <div className="mx-auto px-4 md:px-6 lg:px-0">
         <InView
           variants={{
-            hidden: { opacity: 0, y: isMobile ? 0 : 40, filter: "blur(4px)" },
+            hidden: {
+              opacity: 0,
+              y: device === "mobile" || device === "tablet" ? 0 : 40,
+              filter: "blur(4px)",
+            },
             visible: { opacity: 1, y: 0, filter: "blur(0px)" },
           }}
           viewOptions={{
-            margin: isMobile ? "0px 0px 0px 0px" : "0px 0px -150px 0px",
+            margin:
+              device === "mobile" || device === "tablet"
+                ? "0px 0px 0px 0px"
+                : "0px 0px -150px 0px",
           }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
@@ -124,7 +140,7 @@ export function Gallery() {
           </div>
         </InView>
 
-        <div className="relative mx-auto grid h-144 max-w-[100rem] grid-cols-2 justify-items-center gap-4 md:grid-cols-3 lg:h-[800px] lg:grid-cols-4">
+        <div className="relative mx-auto grid h-144 max-w-[100rem] grid-cols-2 justify-items-center gap-4 lg:h-[800px] lg:grid-cols-4">
           {galleryImages.map((columnImages, columnIndex) => (
             // <div
             //   key={columnIndex}
@@ -144,7 +160,14 @@ export function Gallery() {
                     key={imageIndex}
                     className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-lg"
                     style={{
-                      width: isMobile ? 180 : isTablet ? 230 : 385,
+                      width:
+                        device === "mobile"
+                          ? 180
+                          : device === "tablet"
+                            ? 320
+                            : device === "mediumDesktop"
+                              ? 245
+                              : 385,
                       height: imageData.height,
                       scrollbarGutter: "auto",
                     }}
@@ -152,8 +175,6 @@ export function Gallery() {
                     <Image
                       src={imageData.src}
                       alt={`Gallery image ${imageIndex + 1}`}
-                      // width={isMobile ? 180 : 385}
-                      // height={imageData.height}
                       fill
                       className="h-auto rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                       style={{ scrollbarGutter: "auto" }}
