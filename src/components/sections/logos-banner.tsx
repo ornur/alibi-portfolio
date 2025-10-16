@@ -117,7 +117,7 @@ export function LogosBanner() {
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    className="mx-auto flex h-24 w-32 object-contain brightness-200 grayscale"
+                    className="mx-auto flex h-24 w-32 object-contain"
                     width={100}
                     height={48}
                   />
@@ -135,7 +135,7 @@ export function LogosBanner() {
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    className="mx-auto flex h-24 w-32 object-contain brightness-200 grayscale"
+                    className="mx-auto flex h-24 w-32 object-contain"
                     width={100}
                     height={48}
                   />
@@ -153,7 +153,7 @@ export function LogosBanner() {
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    className="mx-auto flex h-24 w-32 object-contain brightness-200 grayscale"
+                    className="mx-auto flex h-24 w-32 object-contain"
                     width={100}
                     height={48}
                   />
