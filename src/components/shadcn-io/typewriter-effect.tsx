@@ -99,57 +99,59 @@ export const TypewriterEffect = ({
 };
 
 export const TypewriterEffectSmooth = ({
-  words,
+  word,
   className,
+  gap,
+  transparentInside = false,
 }: {
-  words: {
+  word: {
     text: string;
     className?: string;
-  }[];
+  };
   className?: string;
+  gap?: number;
+  transparentInside?: boolean;
 }) => {
   // split text inside of words into array of characters
-  const wordsArray = words.map((word) => {
+  const charArray = word.text.split("").map((char) => {
     return {
-      ...word,
-      text: word.text.split(""),
+      text: char,
+      className: word.className,
     };
   });
   const renderWords = () => {
-    return (
-      <div className="space-x-4 lg:space-x-8">
-        {wordsArray.map((word, idx) => {
-          return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
-                <span
-                  key={`char-${index}`}
-                  className={cn(`text-black dark:text-white`, word.className)}
-                  style={{
-                    WebkitTextStroke: "2px #FF7517",
-                    color: "transparent",
-                  }}
-                >
-                  {char}
-                </span>
-              ))}
-              &nbsp;
-            </div>
-          );
-        })}
-      </div>
-    );
+    return charArray.map((char, idx) => (
+      <span
+        key={`char-${idx}`}
+        className={cn(word.className)}
+        style={
+          transparentInside
+            ? {
+                WebkitTextStroke: "2px #FF7517",
+                color: "transparent",
+              }
+            : undefined
+        }
+      >
+        {char.text}
+      </span>
+    ));
   };
 
   return (
-    <div className={cn("my-6 flex space-x-1", className)}>
+    <div className={cn("flex", className)}>
       <motion.div
-        className="overflow-hidden pb-2"
+        className={cn(
+          "flex flex-col items-center overflow-hidden",
+          gap && `gap-${gap}`
+        )}
         initial={{
-          width: "0%",
+          width: "100%",
+          height: "0%",
         }}
         whileInView={{
-          width: "fit-content",
+          width: "100%",
+          height: "100%",
         }}
         transition={{
           duration: 4,
@@ -157,15 +159,9 @@ export const TypewriterEffectSmooth = ({
           repeat: Infinity,
           repeatDelay: 5,
         }}
+        // style={{scrollbarGutter: 'auto'}}
       >
-        <div
-          className="lg:text:3xl text-xs font-bold sm:text-base md:text-xl xl:text-5xl"
-          style={{
-            whiteSpace: "nowrap",
-          }}
-        >
-          {renderWords()}{" "}
-        </div>{" "}
+        {renderWords()}
       </motion.div>
       {/* <motion.span
         initial={{
