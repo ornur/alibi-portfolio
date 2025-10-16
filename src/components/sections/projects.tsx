@@ -85,7 +85,7 @@ export function Projects() {
                   <MorphingDialogImage
                     src={project.image}
                     alt={project.title}
-                    className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="h-48 px-4 w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="flex grow flex-col p-6">
                     <div className="mb-3 flex items-start justify-between">
