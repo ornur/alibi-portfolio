@@ -70,7 +70,7 @@ export function AboutMe() {
               variants={{
                 hidden: {
                   opacity: 0,
-                  x: isMobile ? 0 : 50,
+                  x: 0,
                   filter: "blur(4px)",
                 },
                 visible: { opacity: 1, x: 0, filter: "blur(0px)" },
