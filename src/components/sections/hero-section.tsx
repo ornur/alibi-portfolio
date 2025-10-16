@@ -20,7 +20,7 @@ export default function HeroSection() {
   return (
     <main className="relative">
       <BackgroundBeams className="-z-20" />
-      <div className="relative mx-auto flex h-[70vh] max-w-6xl flex-col px-6 max-[1600px]:h-[55vh] md:h-screen lg:h-screen lg:items-center lg:justify-center lg:pt-16">
+      <div className="relative mx-auto flex h-[70vh] max-w-6xl flex-col px-6 md:h-screen lg:h-screen lg:items-center lg:justify-center lg:pt-16">
         <TypewriterEffectSmooth
           className="absolute bottom-0 left-6 z-20 m-0 h-80 min-w-fit justify-center rounded-xl md:h-106 lg:top-66 lg:left-3 lg:h-[65vh]"
           word={words[0]}
