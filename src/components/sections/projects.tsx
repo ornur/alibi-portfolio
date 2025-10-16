@@ -97,9 +97,6 @@ export function Projects() {
                           {project.client}
                         </MorphingDialogSubtitle>
                       </div>
-                      <div className="ml-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-background/50 text-muted-foreground transition-all duration-200 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                        <PlusIcon size={16} />
-                      </div>
                     </div>
 
                     <div className="mt-auto flex items-center gap-2">
