@@ -11,7 +11,7 @@ import {
   MorphingDialogDescription,
   MorphingDialogContainer,
 } from "@/components/motion-primitives/morphing-dialog";
-import { PlusIcon, CalendarIcon, TargetIcon } from "lucide-react";
+import { CalendarIcon, TargetIcon } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTranslations } from "next-intl";
 import ReactPlayer from "react-player";
