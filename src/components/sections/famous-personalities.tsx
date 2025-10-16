@@ -95,7 +95,7 @@ export function FamousPersonalities() {
           }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
         >
-          <div className="mt-16 text-center">
+          <div className="text-center">
             <p className="mx-auto max-w-3xl font-cyrillic text-base text-muted-foreground">
               {t("description")}
             </p>

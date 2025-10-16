@@ -60,6 +60,21 @@
         "id": 6,
         "name": "Aqarys Adilzhan",
         "profession": "Blogger, Storyteller"
+      },
+      {
+        "id": 7,
+        "name": "Ansagan Sadirkhanov",
+        "profession": "Stand-up Comedian"
+      },
+      {
+        "id": 8,
+        "name": "Zhasulan Akimzhan",
+        "profession": "Pro MMA Fighter"
+      },
+      {
+        "id": 9,
+        "name": "Eun Joo",
+        "profession": "Singer, Blogger"
       }
     ]
   },

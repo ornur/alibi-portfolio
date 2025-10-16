@@ -67,7 +67,13 @@ type FamousPersonalityKeys =
   | "personalities.4.name"
   | "personalities.4.profession"
   | "personalities.5.name"
-  | "personalities.5.profession";
+  | "personalities.5.profession"
+  | "personalities.6.name"
+  | "personalities.6.profession"
+  | "personalities.7.name"
+  | "personalities.7.profession"
+  | "personalities.8.name"
+  | "personalities.8.profession";
 
 type ProjectTranslationFunction = (key: KeyProjectsKeys) => string;
 type AchievementTranslationFunction = (key: AchievementsKeys) => string;
@@ -188,5 +194,26 @@ export const famousPersonalities = (
     nameEn: "Aqarys Adilzhan",
     profession: t("personalities.5.profession"),
     image: "/users/aqarys.jpg",
+  },
+  {
+    id: 7,
+    name: t("personalities.6.name"),
+    nameEn: "Ansagan Sadirkhanov",
+    profession: t("personalities.6.profession"),
+    image: "/users/ansagaan.jpg",
+  },
+  {
+    id: 8,
+    name: t("personalities.7.name"),
+    nameEn: "Zhasulan Akimzhan",
+    profession: t("personalities.7.profession"),
+    image: "/users/akimzhan.jpg",
+  },
+  {
+    id: 9,
+    name: "eunjoojoojoo",
+    nameEn: "eunjoojoojoo",
+    profession: t("personalities.8.profession"),
+    image: "/users/eunjoo.jpg",
   },
 ];
