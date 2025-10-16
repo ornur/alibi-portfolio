@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
-import "./globals.css";
 import { Provider } from "./provider";
 import { LoadingAnimation } from "@/components/loading-animation";
+import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
