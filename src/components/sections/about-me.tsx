@@ -51,7 +51,7 @@ export function AboutMe() {
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
           >
             <div className="relative aspect-square w-full lg:w-110">
-              <div className="absolute inset-0 scale-90 rounded-full bg-new-orange bg-gradient-to-tr from-primary/20 to-transparent blur-[24px] lg:scale-110" />
+              <div className="absolute inset-0 scale-90 rounded-full bg-new-orange bg-gradient-to-tr from-primary/20 to-transparent blur-[10px] lg:blur-[24px] lg:scale-110" />
               <Image
                 className="absolute left-6 h-130 top-12 w-65 md:inset-x-0 md:w-[60vw] md:top-40 md:left-20 md:h-225 object-cover saturate-120 lg:mx-0 lg:left-0 lg:top-0 lg:h-170 lg:w-85"
                 src="/a-halo.png"
