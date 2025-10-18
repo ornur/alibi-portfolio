@@ -39,7 +39,7 @@ const images = [
     height: 700,
   },
   {
-    src: "/gallery/5.webp",
+    src: "/gallery/in-building.webp",
     height: 550,
   },
   {
@@ -47,7 +47,7 @@ const images = [
     height: 650,
   },
   {
-    src: "/gallery/7.webp",
+    src: "/gallery/a-watching.webp",
     height: 500,
   },
   {
@@ -60,7 +60,7 @@ const images = [
     height: 700,
   },
   {
-    src: "/gallery/9.webp",
+    src: "/gallery/a-explaining.webp",
     height: 550,
   },
   {
