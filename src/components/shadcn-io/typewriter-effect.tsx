@@ -154,7 +154,7 @@ export const TypewriterEffectSmooth = ({
           height: "100%",
         }}
         transition={{
-          duration: 4,
+          duration: 1.5,
           ease: "linear",
           repeat: Infinity,
           repeatDelay: 5,
